@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="299px" height="224px" viewBox="0 0 299 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>mi-praktijkinfo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="23.9173266%" y1="68.6503384%" x2="83.9996625%" y2="28.9398055%" id="linearGradient-1">
+            <stop stop-color="#EEEEEE" offset="0%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="299" height="224"></rect>
+        <polygon id="path-4" points="0.153644068 0.431490763 49.7621186 0.431490763 49.7621186 211 0.153644068 211"></polygon>
+        <polygon id="path-6" points="0 397 336 397 336 0 0 0"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Practijkinfo">
+            <g id="Menu-Section-2-Copy-9">
+                <g id="mi-praktijkinfo">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <g id="Group-22" mask="url(#mask-3)">
+                        <g transform="translate(-50.000000, 6.000000)">
+                            <path d="M220.151431,395 L218,389.466424 C272.998883,376.949398 294.910474,319.384629 304.183151,276.099263 C314.755704,226.751861 312.196785,179.725784 312.167861,179.255761 L319.701699,179 C319.731473,179.475105 322.326972,227.018632 311.643827,276.946999 C301.79012,323.008469 278.572698,381.703836 220.151431,395" id="Fill-1" stroke="none" fill="#2B374D" fill-rule="evenodd"></path>
+                            <g id="Group-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(253.000000, 186.000000)">
+                                <mask id="mask-5" fill="white">
+                                    <use xlink:href="#path-4"></use>
+                                </mask>
+                                <g id="Clip-4"></g>
+                                <path d="M5.46805085,211.000169 L0.153644068,206.916599 C29.9765254,183.987933 40.6909322,32.7390651 42.255339,0.431490763 L49.7621186,0.645880321 C48.0875424,35.2786916 37.6434746,186.259784 5.46805085,211.000169" id="Fill-3" fill="#2B374D" mask="url(#mask-5)"></path>
+                            </g>
+                            <mask id="mask-7" fill="white">
+                                <use xlink:href="#path-6"></use>
+                            </mask>
+                            <g id="Clip-7" stroke="none" fill="none"></g>
+                            <polygon id="Fill-6" stroke="none" fill="#2B374D" fill-rule="evenodd" mask="url(#mask-7)" points="180 373 219 373 219 154 180 154"></polygon>
+                            <polygon id="Fill-10" stroke="none" fill="#8493AE" fill-rule="evenodd" mask="url(#mask-7)" points="241.457526 228 0 228 127.156588 149 336 149"></polygon>
+                            <polygon id="Fill-11" stroke="none" fill="#65789A" fill-rule="evenodd" mask="url(#mask-7)" points="336 194.652349 336 148 242 227.401612 242 249"></polygon>
+                            <path d="M132.154681,158 L54,209 L113.348308,206.166951 C113.348308,206.166951 134.976104,183.5 156.602203,188.340219 C172.664371,191.935225 168.276529,209 168.276529,209 L230.414863,209 L296,158 L132.154681,158 Z" id="Fill-12" stroke="none" fill="#4C5A73" fill-rule="evenodd" mask="url(#mask-7)"></path>
+                            <polygon id="Fill-13" stroke="none" fill="#20293A" fill-rule="evenodd" mask="url(#mask-7)" points="224 106.325046 211.641573 182 207 181.498424 211.738815 105"></polygon>
+                            <path d="M224,201 L196,201 L196,178.352283 C196,172.635213 200.676538,168 206.444579,168 L213.555421,168 C219.325154,168 224,172.635213 224,178.352283 L224,201 Z" id="Fill-14" stroke="none" fill="#2B374D" fill-rule="evenodd" mask="url(#mask-7)"></path>
+                            <polygon id="Fill-15" stroke="none" fill="#20293A" fill-rule="evenodd" mask="url(#mask-7)" points="139 113 271 113 271 0 139 0"></polygon>
+                            <polygon id="Fill-16" stroke="none" fill="#4C5A73" fill-rule="evenodd" mask="url(#mask-7)" points="143 109 266 109 266 5 143 5"></polygon>
+                            <polygon id="Fill-17" stroke="none" fill="#65789A" fill-rule="evenodd" mask="url(#mask-7)" points="276 1.47837346 271 0 271 113 273.499591 111.060692"></polygon>
+                            <polygon id="Fill-18" stroke="none" fill="#191E27" fill-rule="evenodd" mask="url(#mask-7)" points="152 99 234 99 234 9 152 9"></polygon>
+                            <polygon id="Fill-19" stroke="none" fill="#AEC2E7" fill-rule="evenodd" mask="url(#mask-7)" points="244 46 264 46 264 10 244 10"></polygon>
+                            <polygon id="Fill-20" stroke="none" fill="#AEC2E7" fill-rule="evenodd" mask="url(#mask-7)" points="244 85 264 85 264 49 244 49"></polygon>
+                            <path d="M196.633129,43.8281723 C195.80936,43.8281723 195.028724,43.5155523 194.288686,42.8894652 C193.547801,42.2633781 193.177359,41.4720853 193.177359,40.5155869 C193.177359,39.0660131 193.868344,37.4503864 195.250313,35.6704013 C196.633129,33.8904162 198.064152,33 199.545076,33 C200.532076,33 201.354154,33.3049951 202.013,33.9149852 C202.671,34.5258226 203,35.4069194 203,36.5599703 C203,37.9781973 202.325085,39.5438387 200.976945,41.2577416 C199.627114,42.9716444 198.179176,43.8281723 196.633129,43.8281723 M199.989099,65.9301485 L199.989099,69.5401041 C196.797206,73.6600792 193.81929,76.7667929 191.05535,78.8602452 C188.291411,80.9528503 185.937664,82 183.997494,82 C181.297832,82 179.290847,80.5826201 177.974847,77.7470132 C176.658846,74.9122534 176,71.8140118 176,68.4514411 C176,67.1662258 176.131938,65.9386206 176.394969,64.7686256 C176.658846,63.5986306 176.970931,62.6336601 177.333761,61.8754085 C177.6949,61.1171568 178.369816,59.9310649 179.356816,58.3162854 C184.029633,51.0311392 188.306635,47.3881425 192.190358,47.3881425 C194.197344,47.3881425 195.202105,48.1633383 195.202105,49.7120355 C195.202105,50.7676574 194.550871,52.415478 193.251785,54.6563446 C191.951854,56.8989055 190.791473,58.4967408 189.772334,59.4523921 C186.909441,62.2219168 185.04116,64.1501634 184.170029,65.2379791 C183.297206,66.3257949 182.86164,67.5618722 182.86164,68.9453637 C182.86164,70.1331501 183.305663,71.1218424 184.194556,71.912288 C185.082602,72.7035808 186.23368,73.0992271 187.64948,73.0992271 C189.195527,73.0992271 190.898885,72.5307502 192.757862,71.3937964 C194.61684,70.2559953 197.028098,68.4353442 199.989099,65.9301485" id="Fill-21" stroke="none" fill="#AEC2E7" fill-rule="evenodd" mask="url(#mask-7)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

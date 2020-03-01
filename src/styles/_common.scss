@@ -1,0 +1,148 @@
+body {
+  margin-top: $navbar-height;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-flex-end {
+  align-items: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+.title {
+  letter-spacing: -.015em;
+}
+
+.button {
+  font-weight: $weight-semibold;
+
+  &.is-medium {
+    height: 2.7777777778rem;
+  }
+
+  &.is-large {
+    height: 3.1111111111rem;
+  }
+
+  &.is-white {
+    color: $primary;
+
+    &:focus,
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .container.is-9 {
+    max-width: calc(#{$desktop - 2 * $gap} * 0.7457446809);
+  }
+}
+
+.checkerboard-sections {
+  & > .section:nth-child(odd) {
+    background-color: #f3f3f3;
+  }
+}
+
+.margin-bottom {
+  margin-bottom: 1rem !important;
+
+  &-negate {
+    margin-bottom: -1rem !important;
+  }
+
+  &-medium {
+    margin-bottom: 2rem !important;
+
+    &-negate {
+      margin-bottom: -2rem !important;
+    }
+  }
+
+  &-large {
+    margin-bottom: 4rem !important;
+
+    &-negate {
+      margin-bottom: -4rem !important;
+    }
+  }
+}
+
+.margin-top {
+  margin-top: 1rem !important;
+
+  &-negate {
+    margin-top: -1rem !important;
+  }
+
+  &-medium {
+    margin-top: 2rem !important;
+
+    &-negate {
+      margin-top: -2rem !important;
+    }
+  }
+
+  &-large {
+    margin-top: 4rem !important;
+
+    &-negate {
+      margin-top: -4rem !important;
+    }
+  }
+}
+
+p + .button {
+  margin-top: 2rem;
+}
+
+.link-hidden {
+  color: $text !important;
+}
+
+a[href].icon {
+  color: $primary;
+}
+
+.navbar.is-fixed-top {
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.is-fixed {
+  position: fixed;
+
+  &.hero {
+    overflow-y: scroll;
+    padding-top: $navbar-height;
+    @supports (backdrop-filter: saturate(180%) blur(20px)) or (-webkit-backdrop-filter: saturate(180%) blur(20px)) {
+      background-color: rgba(255,255,255,.95) !important;
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+.small,
+small {
+  line-heigth: 1;
+}
+
+// .button,
+// .link,
+// a[href] {
+//   transition: background-color, border-color, color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+//   -webkit-tap-highlight-color: transparent;
+// }
