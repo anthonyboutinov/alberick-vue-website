@@ -168,8 +168,7 @@ export default {
     background-image: url('/images/hero-bg-blobs.svg'), linear-gradient(180deg, #ffffff 0%, #fefefe 100%);
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
-    background-size: 140vh, cover;
-    min-height: calc(100vh - #{$navbar-height});
+    background-size: 130vh, cover;
 
     @media (min-width: $desktop) {
         background-size: max(72rem, 160vh), cover;

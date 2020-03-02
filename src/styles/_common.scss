@@ -2,6 +2,10 @@ body {
   margin-top: $navbar-height;
 }
 
+.is-fullheight {
+  min-height: calc(100vh - #{$navbar-height});
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -50,7 +54,8 @@ body {
 
 .checkerboard-sections {
   & > .section:nth-child(odd) {
-    background-color: #f3f3f3;
+    // background-color: #f3f3f3;
+    background-color: #f8f8f8;
   }
 }
 
@@ -138,6 +143,10 @@ address {
 .small,
 small {
   line-heigth: 1;
+}
+
+strong, .strong {
+  font-weight: $weight-semibold;
 }
 
 // .button,

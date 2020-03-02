@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Contact from '../views/Contact.vue'
-import Menu from '../views/Menu.vue'
+import Home from '../templates/home/Home.vue'
+import Contact from '../templates/contact/Contact.vue'
+import Menu from '../templates/menu/Menu.vue'
+import Page from '../templates/page/Page.vue'
 
 Vue.use(VueRouter)
 
@@ -23,17 +24,17 @@ const routes = [
     component: Menu
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/:id',
+    name: 'page',
+    component: Page,
   },
   {
     path: '*',
     name: 'not-found',
-    component: () => import(/* webpackChunkName: "not-found" */ '../views/NotFound.vue')
+    // route level code-splitting
+    // this generates a separate chunk ([name].[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "not-found" */ '../templates/not-found/NotFound.vue')
   }
 ]
 

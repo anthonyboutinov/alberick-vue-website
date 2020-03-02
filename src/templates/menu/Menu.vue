@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import MenuItem from '../components/MenuItem.vue';
+import MenuItem from './MenuItem.vue';
 
 export default {
   components: {

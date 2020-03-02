@@ -7,10 +7,8 @@
           <p class="is-size-5 margin-bottom-medium">
             We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg Online.
           </p>
-          <div class="columns">
-            <div class="column is-8">
-              <menu-item slug="online-services" title="Online services" style="border-radius:12px;" />
-            </div>
+          <div class="menu-item-standalone">
+            <menu-item slug="online-services" title="Online services" style="border-radius:12px;" />
           </div>
         </div>
         <div class="column is-6">
@@ -38,7 +36,7 @@
 </template>
 
 <script>
-import MenuItem from '../components/MenuItem.vue';
+import MenuItem from '../menu/MenuItem.vue';
 
 export default {
   components: {
@@ -47,5 +45,11 @@ export default {
 }
 </script>
 
-<!-- // <style lang="scss">
-// </style> -->
+<style lang="scss">
+.menu-item-standalone {
+  width: 100%;
+  @media (min-width: $tablet) {
+    max-width: 301px;
+  }
+}
+</style>
