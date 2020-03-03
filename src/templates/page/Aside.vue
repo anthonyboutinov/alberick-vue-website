@@ -1,6 +1,6 @@
 <template>
-  <div :class="aside.classes" :style="aside.style">
-    <aside-element v-for="(element, index) in aside.elements" v-bind:key="index" v-bind:element="element" />
+  <div>
+    <aside-element v-for="(element, index) in aside_elements" v-bind:key="index" v-bind:element="element" />
   </div>
 </template>
 
@@ -11,8 +11,8 @@ export default {
     AsideElement,
   },
   props: {
-    aside: {
-      type: Object,
+    aside_elements: {
+      type: Array,
     }
   }
 }
