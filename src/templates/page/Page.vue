@@ -34,7 +34,9 @@ export default {
     TextSection,
   },
   props: {
-
+    // highlight_alternate_sections
+    // title
+    // sections
   },
   data() {
     return {
@@ -59,15 +61,22 @@ export default {
       this.loading = true;
       const self = this;
 
-      this.$database.getItems("pages")
-        // this.$api.getItems("pages")
-        .then(data => {
-          console.log(data.data[0]);
+      this.$database.getItems("pages?fields=id,title,slug,acf&slug=" + this.$route.params.slug)
+        .then(response => {
           self.loading = false;
-          self.page = data.data[0];
+          self.page = response.data[0];
+
+          Object.assign(self.page, self.page.acf);
+          delete self.page.acf;
+          self.page.title = self.page.title.rendered;
+          console.log(self.page);
         })
         .catch(error => {
-          self.error = error
+          self.loading = false;
+          self.error = error;
+          if (error.data.status === 404) {
+            //...
+          }
         });
     },
   }

@@ -21,3 +21,9 @@ export default {
 //   href: 'tel:000',
 // }
 </script>
+
+<style lang="scss">
+.aside-element:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+</style>

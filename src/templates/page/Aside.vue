@@ -16,13 +16,9 @@ export default {
     }
   }
 }
-
-// classes: '',
-// style: '',
-// elements: [{
-//   type: 'button',
+//   type: 'button', deprecated
 //   label: 'Bel',
 //   hint: '',
 //   href: 'tel:000',
-// }, ]
+
 </script>

@@ -24,7 +24,7 @@ const routes = [
     component: Menu
   },
   {
-    path: '/:id',
+    path: '/:slug',
     name: 'page',
     component: Page,
   },

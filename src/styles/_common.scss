@@ -14,6 +14,10 @@ body {
   align-items: flex-end;
 }
 
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
 .justify-content-center {
   justify-content: center;
 }
@@ -147,6 +151,10 @@ small {
 
 strong, .strong {
   font-weight: $weight-semibold;
+}
+
+.button.is-primary.is-outlined {
+  background-color: white;
 }
 
 // .button,
