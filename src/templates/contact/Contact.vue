@@ -7,7 +7,7 @@
           <p class="is-size-5 margin-bottom-medium">
             We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg Online.
           </p>
-          <div class="menu-item-standalone">
+          <div class="menu-item-standalone is-hidden-mobile">
             <menu-item slug="online-services" title="Online services" style="border-radius:12px;" />
           </div>
         </div>
@@ -21,7 +21,7 @@
           </address>
           <a href="#" target="_blank" class="button is-rounded is-primary is-outlined margin-bottom-medium">Map</a>
           <div>
-            Tel: <a href="tel:077-3828182">077-3828182</a><br>
+            Tel: <a href="tel:0773828182">077-3828182</a><br>
             Fax: 077-3961998<br>
             E-mail: <a href="mailto:info@alberick.nl">info@alberick.nl</a> (niet voor medische vragen)<br>
             <a class="icon is-medium margin-top" href="#" target="_blank">

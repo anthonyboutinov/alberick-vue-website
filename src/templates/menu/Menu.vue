@@ -2,9 +2,9 @@
 <section class="hero is-fullheight">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-multiline is-variable is-2" id="primary-menu" style="border-radius:8px;overflow:hidden;">
+      <div class="columns is-multiline is-variable is-2" id="primary-menu">
         <div class="column is-8">
-          <menu-item slug="spoed" title="Spoed" :nobackground="true" style="border-top-left-radius:12px" />
+          <menu-item slug="spoed" title="Spoed" :nobackground="true" :applycustomrules="true" style="border-top-left-radius:12px" />
         </div>
         <div class="column is-4">
           <menu-item slug="team" title="Het team" style="border-top-right-radius:12px" />

@@ -24,6 +24,12 @@ export default {
 
 <style lang="scss">
 .aside-element:not(:last-child) {
-  margin-bottom: 1.5rem
+  margin-bottom: 1.5rem;
+}
+
+.aside-element {
+  .button.is-primary.is-outlined {
+    background-color: white;
+  }
 }
 </style>

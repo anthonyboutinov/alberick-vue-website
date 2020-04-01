@@ -27,7 +27,7 @@
     <a id="start"></a>
     <div class="container is-9">
       <figure class="image" style="margin-bottom:0.5rem">
-        <img src="@/assets/photo-alberick-building.jpg" srcset="@/assets/photo-alberick-building.jpg 701px, @/assets/photo-alberick-building@2x.jpg 1402px" alt="">
+        <img src="@/assets/photo-alberick-building.jpg" srcset="@/assets/photo-alberick-building.jpg 701w, @/assets/photo-alberick-building@2x.jpg 1402w" alt="">
       </figure>
       <div class="has-text-right" style="margin-bottom:1.5rem">Alberickstraat 193, 5922 BR, Venlo</div>
       <p class="is-size-4">Welkom op de website van de huisartsenpraktijk van het Medisch Centrum Alberick.</p>
@@ -79,7 +79,7 @@
   </section>
   <section class="" style="background-color: #dad5eb">
     <figure class="image">
-      <img src="@/assets/map-monochrome.png" srcset="@/assets/map-monochrome.png 1440px, @/assets/map-monochrome@2x.png 2550px" alt="Map of the area">
+      <img src="@/assets/map-monochrome.png" srcset="@/assets/map-monochrome.png 1440w, @/assets/map-monochrome@2x.png 2550w" alt="Map of the area">
     </figure>
     <div class="section">
       <div class="container is-size-5">
@@ -119,10 +119,10 @@
   </section>
   <section class="section is-medium">
     <div class="container">
-      <div class="columns is-mobile is-multiline justify-content-space-around">
+      <div class="columns is-mobile is-multiline justify-content-space-around align-items-center">
         <div class="column is-narrow">
-          <figure class="image margin-bottom-medium" style="width:125px">
-            <img src="@/assets/logos/cohesie-logo.png" srcset="@/assets/logos/cohesie-logo.png 125px, @/assets/logos/cohesie-logo@2x.png 250px" alt="Cohesie">
+          <figure class="image margin-bottom-medium" style="width:125px;margin-top:2rem;">
+            <img src="@/assets/logos/cohesie-logo.png" srcset="@/assets/logos/cohesie-logo.png 125w, @/assets/logos/cohesie-logo@2x.png 250w" alt="Cohesie">
           </figure>
         </div>
         <div class="column is-narrow">
@@ -136,15 +136,15 @@
           </figure>
         </div>
       </div>
-      <div class="columns is-mobile is-multiline justify-content-space-around margin-bottom-medium-negate">
+      <div class="columns is-mobile is-multiline justify-content-space-around align-items-center margin-bottom-medium-negate">
         <div class="column is-narrow">
           <figure class="image margin-bottom-medium" style="width:326px">
-            <img src="@/assets/logos/thuisartsnl-logo.png" srcset="@/assets/logos/thuisartsnl-logo.png 326px, @/assets/logos/thuisartsnl-logo@2x.png 652px" alt="Thuisarts.NL">
+            <img src="@/assets/logos/thuisartsnl-logo.png" srcset="@/assets/logos/thuisartsnl-logo.png 326w, @/assets/logos/thuisartsnl-logo@2x.png 652w" alt="Thuisarts.NL">
           </figure>
         </div>
         <div class="column is-narrow">
           <figure class="image margin-bottom-medium" style="width:307px">
-            <img src="@/assets/logos/uw-zorg-online-logo.png" alt="Uw Zorg Online">
+            <img src="@/assets/logos/uwzorgonline-logo.png" srcset="@/assets/logos/uwzorgonline-logo.png 307w, @/assets/logos/uwzorgonline-logo@3x.png, 614w" alt="Uw Zorg Online">
           </figure>
         </div>
       </div>

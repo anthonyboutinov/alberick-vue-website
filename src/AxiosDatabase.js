@@ -3,11 +3,26 @@ import axios from 'axios';
 export default class AxiosDatabase {
   constructor(params) {
     this.url = params.url;
-    this.storage = window.localStorage || params.storage;
+    this.temporaryStorage = {};
   }
 
   getItems(request) {
-    console.log(this.url + request);
+    // console.log(this.url + request);
     return axios.get(this.url + request);
+  }
+
+  hasCached(slug) {
+    return Object.prototype.hasOwnProperty.call(this.temporaryStorage, slug);
+  }
+
+  getCached(slug) {
+    return this.temporaryStorage[slug];
+  }
+
+  store(slug, data) {
+    // data not cached when in development mode
+    if (window.location.hostname !== 'localhost') {
+      this.temporaryStorage[slug] = data;
+    }
   }
 }

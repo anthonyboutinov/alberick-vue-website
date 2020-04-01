@@ -1,7 +1,7 @@
 <template>
 <div id="app">
 
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item is-size-7" to="/">
@@ -36,7 +36,7 @@
     <router-view />
   </transition-page>
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="container has-text-centered is-size-7">
       <p>
         © <router-link to="/" class="link-hidden">Alberick</router-link> 2020.
