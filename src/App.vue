@@ -5,7 +5,8 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item is-size-7-rem" to="/">
-          Alberick — Medisch Centrum
+          Alberick
+          <span class="is-hidden-xxs">—</span> Medisch Centrum
         </router-link>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" :aria-expanded="displayMenu" v-on:click="toggleMenu()">
@@ -39,12 +40,11 @@
   <footer class="footer" id="footer">
     <div class="container has-text-centered is-size-7">
       <p>
-        © <router-link to="/" class="link-hidden">Alberick</router-link> 2020.
+        ©
+        <router-link to="/" class="link-hidden">Alberick</router-link> 2020.
         <router-link to="/privacy-policy">Privacy &amp; Cookies</router-link>.
-        <router-link to="/terms">T&amp;C's</router-link>.
-        Website by
-        <a href="https://boutinov.com" target="_blank">Boutinov.com</a>.
-        Artwork design by
+        <router-link to="/terms">T&amp;C's</router-link>. Website by
+        <a href="https://boutinov.com" target="_blank">Boutinov.com</a>. Artwork design by
         <a href="https://freepik.com" target="_blank" class="link-hidden">pch.vector / Freepik</a>.
       </p>
     </div>
@@ -105,5 +105,16 @@ footer.footer {
 
 .navbar .button.is-white {
     background-color: rgba(255,255,255,0);
+}
+
+@media (max-width: $tablet - 1px) {
+    .navbar-brand > .navbar-item {
+        padding-left: 1.5rem;
+    }
+}
+@media (max-width: 290px) {
+    .is-hidden-xxs {
+        display: none;
+    }
 }
 </style>

@@ -208,9 +208,30 @@ strong {
       margin-right: -$gap;
     }
   }
+
+  @each $key, $value in (
+    "1": 6.7222222222,
+    "2": 4.5,
+    "3": 3,
+    "4": 2,
+    "5": 1.3333333333,
+    "6": 1,
+  ) {
+    .title.is-#{$key} {
+      font-size: calc(1.2rem +  #{$value}vw);
+    }
+  }
 }
 
-@each $key, $value in $sizes {
+@each $key, $value in (
+  "1": 6.7222222222,
+  "2": 4.5,
+  "3": 3,
+  "4": 2,
+  "5": 1.3333333333,
+  "6": 1,
+  "7": 0.7777777778
+) {
   .is-size-#{key}-rem {
     font-size: #{$value}rem;
   }

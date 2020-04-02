@@ -124,10 +124,11 @@ export default {
 
 <style lang="scss">
 .page-head {
-    padding: 0 1.5rem;
+    padding: 0rem 1.5rem;
 }
 .page-title {
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
 
     @media (min-width: $tablet) {
       padding-top: 4rem;

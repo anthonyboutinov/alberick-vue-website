@@ -17,7 +17,7 @@
           </div>
         </div>
         <p class="is-hidden-tablet">
-          We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg Online.
+          We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg&nbsp;Online.
         </p>
       </div>
     </div>
