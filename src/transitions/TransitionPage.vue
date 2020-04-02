@@ -62,7 +62,7 @@ export default {
 .fade-enter-active,
 .fade-leave-active {
     transition-duration: 0.3s;
-    transition-property: height, opacity;
+    transition-property: opacity;
     transition-timing-function: ease;
     overflow: hidden;
 }
@@ -77,7 +77,7 @@ export default {
 .slide-right-enter-active,
 .slide-right-leave-active {
     transition-duration: 0.5s;
-    transition-property: height, opacity, transform;
+    transition-property: opacity, transform;
     transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
     overflow: hidden;
 }
