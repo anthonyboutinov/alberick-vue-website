@@ -7,8 +7,7 @@ import Page from '../templates/page/Page.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'home',
     component: Home
@@ -34,7 +33,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk ([name].[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "not-found" */ '../templates/not-found/NotFound.vue')
+    component: () =>
+      import ( /* webpackChunkName: "not-found" */ '../templates/not-found/NotFound.vue')
   }
 ]
 
@@ -69,6 +69,12 @@ const router = new VueRouter({
       })
     }
   }
-})
+});
+
+// Save the last route name in localStorage
+router.beforeEach((to, from, next) => {
+  Vue.prototype.PREV_ROUTE = from.fullPath;
+  next();
+});
 
 export default router
