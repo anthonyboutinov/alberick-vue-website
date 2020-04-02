@@ -3,6 +3,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `@import "@/styles/_variables.scss";
+        @import "@/styles/_mixins.scss";
         @import "node_modules/bulma/sass/utilities/_all";
         @import "node_modules/bulma/sass/base/_all";
         @import "node_modules/bulma/sass/grid/_all";

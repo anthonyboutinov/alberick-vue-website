@@ -1,49 +1,15 @@
 <template>
 <section class="hero is-fullheight">
-  <div class="hero-body">
+  <div class="hero-body menu-hero-body">
     <div class="container">
-      <div class="columns is-multiline is-variable is-2" id="primary-menu">
-        <div class="column is-8">
-          <menu-item slug="spoed" title="Spoed" :nobackground="true" :applycustomrules="true" style="border-top-left-radius:12px" />
+      <div class="columns is-multiline is-mobile is-variable is-1 is-hidden-tablet">
+        <div class="column" v-for="item in menuItems" v-bind:key="item.slug" :class="{'is-12': item.slug === 'spoed', 'is-6': item.slug !== 'spoed'}">
+          <menu-item :slug="item.slug" :title="item.title" :ispartofprimarymenu="true" />
         </div>
-        <div class="column is-4">
-          <menu-item slug="team" title="Het team" style="border-top-right-radius:12px" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="spreekuren" title="Spreekuren" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="afspraak-maken" title="Afspraak maken" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="herhaal-recepten" title="Herhaal recepten" :nobackground="true" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="huisbezoek" title="Huisbezoek" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="online-services" title="Online services" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="lab" title="Labonderzoeken<br>&amp; verrichtingen" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="speciale-onderzoeken" title="Speciale onderzoeken" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="inschrijving" title="Inschrijving" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="praktijkinfo" title="Praktijkinfo" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="links" title="Interessante links" style="border-bottom-left-radius:12px" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="afwezigheid-huisartsen" title="Afwezigheid huisartsen" />
-        </div>
-        <div class="column is-4">
-          <menu-item slug="klachtenregeling" title="Klachtenregeling" style="border-bottom-right-radius:12px" />
+      </div>
+      <div class="columns is-multiline is-variable is-2 is-hidden-mobile">
+        <div class="column" v-for="item in menuItems" v-bind:key="item.slug" :class="{'is-8': item.slug === 'spoed', 'is-4': item.slug !== 'spoed', 'is-hidden-tablet': item.mobileOnly}">
+          <menu-item :slug="item.slug" :title="item.title" :ispartofprimarymenu="true" />
         </div>
       </div>
     </div>
@@ -58,6 +24,57 @@ export default {
   components: {
     MenuItem
   },
+  data() {
+    return {
+      menuItems: [{
+        slug: 'spoed',
+        title: 'Spoed',
+      }, {
+        slug: 'contact',
+        title: 'Contact',
+        mobileOnly: true,
+      }, {
+        slug: 'team',
+        title: 'Het team',
+      }, {
+        slug: 'spreekuren',
+        title: 'Spreekuren',
+      }, {
+        slug: 'afspraak-maken',
+        title: 'Afspraak maken',
+      }, {
+        slug: 'herhaal-recepten',
+        title: 'Herhaal recepten',
+      }, {
+        slug: 'huisbezoek',
+        title: 'Huisbezoek',
+      }, {
+        slug: 'online-services',
+        title: 'Online services',
+      }, {
+        slug: 'lab',
+        title: 'Labonderzoeken<br>&amp; verrichtingen',
+      }, {
+        slug: 'speciale-onderzoeken',
+        title: 'Speciale onderzoeken',
+      }, {
+        slug: 'inschrijving',
+        title: 'Inschrijving',
+      }, {
+        slug: 'praktijkinfo',
+        title: 'Praktijkinfo',
+      }, {
+        slug: 'links',
+        title: 'Interessante links',
+      }, {
+        slug: 'afwezigheid-huisartsen',
+        title: 'Afwezigheid huisartsen',
+      }, {
+        slug: 'klachtenregeling',
+        title: 'Klachtenregeling',
+      }]
+    }
+  }
 }
 </script>
 
@@ -65,5 +82,10 @@ export default {
 .columns.is-variable .column {
     padding-top: var(--columnGap);
     padding-bottom: var(--columnGap);
+}
+@media (max-width: $tablet - 1px) {
+    .hero-body.menu-hero-body {
+        padding: 1em 0.5em;
+    }
 }
 </style>
