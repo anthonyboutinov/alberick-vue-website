@@ -34,7 +34,7 @@
 </section>
 </template>
 
-<style class="scss">
+<style lang="scss">
 .section.logos .image {
   max-width: calc(50vw - #{$gap} * 2);
 }

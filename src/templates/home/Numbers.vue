@@ -15,15 +15,15 @@
       </div>
       <div class="column is-4 big-numbers">
         <div>9</div>
-        doktersassistentes
+        dokter&shy;sassistentes
       </div>
       <div class="column is-4 big-numbers is-offset-2">
         <div>3</div>
-        praktijkondersteuners
+        praktijk&shy;onder&shy;steuners
       </div>
       <div class="column is-4 big-numbers">
         <div>3</div>
-        praktijkondersteuner huisarts geestelijke gezondheidszorg
+        praktijk&shy;onder&shy;steuner huisarts geestelijke gezondheidszorg
       </div>
     </div>
   </div>
@@ -32,17 +32,47 @@
 
 <style lang="scss">
 .big-numbers {
-    text-align: center;
-    margin: 1rem 0;
-    font-size: $size-5;
+    font-size: $size-6;
+
     & > div:first-child {
-        font-size: 4rem;
+        font-size: 3em;
         color: #222222;
+        margin-right: 0.5em;
+
+    }
+
+    @media (max-width: $tablet - 1px) {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+
+      & > div:first-child {
+        line-height: 1em;
+      }
+    }
+
+    @media (min-width: $tablet) {
+        margin: 1rem 0;
+        text-align: center;
+        font-size: $size-5;
+
+        & > div:first-child {
+            font-size: 4rem;
+            float: none;
+            margin-right: 0;
+        }
     }
 }
 
 .doctor-profile-numbers {
-    width: 83px;
-    margin: 13px auto;
+    width: 3em;
+    margin: 0 0.75em 0 -0.5em;
+
+    @media (min-width: $tablet) {
+      width: 83px;
+      margin: 13px auto;
+    }
 }
 </style>
