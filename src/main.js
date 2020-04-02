@@ -17,7 +17,7 @@ const databaseParams = {
   // storage: window.localStorage
 
   // Wordpress:
-  url: "http://localhost:8888/wp-json/wp/v2/",
+  url: "http://192.168.0.109:8888/wp-json/wp/v2/",
 
 };
 

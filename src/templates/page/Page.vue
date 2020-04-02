@@ -127,8 +127,12 @@ export default {
     padding: 0 1.5rem;
 }
 .page-title {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
+
+    @media (min-width: $tablet) {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
 }
 .alternate-sections {
   &.is-odd {

@@ -1,5 +1,13 @@
 body {
   margin-top: $navbar-height;
+  @media (max-width: $tablet - 1px) {
+    font-size: 14px;
+  }
+  overflow-x: hidden;
+}
+
+.section {
+  overflow-x: hidden;
 }
 
 .is-fullheight {
@@ -161,6 +169,30 @@ strong {
 
 .space-between {
   justify-content: space-between;
+}
+
+@media (min-width: $tablet) {
+    .has-text-right-tablet {
+        text-align: right;
+    }
+    .has-text-centered-tablet {
+        text-align: center;
+    }
+}
+
+@media (max-width: $tablet - 1px) {
+  .is-fillwidth-mobile {
+    &.image {
+      margin-left: -$gap;
+      margin-right: -$gap;
+    }
+  }
+}
+
+@each $key, $value in $sizes {
+  .is-size-#{key}-rem {
+    font-size: #{$value}rem;
+  }
 }
 // .button,
 // .link,

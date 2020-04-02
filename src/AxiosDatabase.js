@@ -21,7 +21,7 @@ export default class AxiosDatabase {
 
   store(slug, data) {
     // data not cached when in development mode
-    if (window.location.hostname !== 'localhost') {
+    if (window.location.hostname !== '192.168.0.109') {
       this.temporaryStorage[slug] = data;
     }
   }

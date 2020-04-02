@@ -8,17 +8,20 @@
             <div id="hero-logo">LOGO</div>
             <div class="title is-2">Medisch Centrum</div>
             <div class="title is-1">Alberick</div>
-            <router-link to="#start" class="button is-primary is-large is-rounded">Begin</router-link>
+            <!-- <router-link to="#start" class="button is-primary is-large is-rounded is-hidden-mobile">Begin</router-link> -->
           </div>
-          <div class="column is-6">
+          <div class="column is-6 is-hidden-mobile">
             <figure class="image" id="hero-image">
-              <img src="@/assets/two-doctors.svg" alt="">
+              <img src="@/assets/home/two-doctors.svg" alt="">
             </figure>
           </div>
         </div>
+        <p class="is-hidden-tablet">
+          We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg Online.
+        </p>
       </div>
     </div>
-    <div class="hero-foot has-text-grey-light">
+    <div class="hero-foot has-text-grey-light is-hidden-mobile is-hidden-tablet-only is-hidden-desktop-only">
       <small>Scroll om meer te leren</small>
       <div class="icon-circle-thick"></div>
     </div>
@@ -26,11 +29,13 @@
   <section class="section is-medium">
     <a id="start"></a>
     <div class="container is-9">
-      <figure class="image" style="margin-bottom:0.5rem">
-        <img src="@/assets/photo-alberick-building.jpg" srcset="@/assets/photo-alberick-building.jpg 701w, @/assets/photo-alberick-building@2x.jpg 1402w" alt="">
+      <figure class="image is-fillwidth-mobile" style="margin-bottom:0.5rm">
+        <img src="@/assets/home/photo-alberick-building.jpg" srcset="@/assets/home/photo-alberick-building.jpg 701w, @/assets/home/photo-alberick-building@2x.jpg 1402w" alt="">
       </figure>
-      <div class="has-text-right" style="margin-bottom:1.5rem">Alberickstraat 193, 5922 BR, Venlo</div>
-      <p class="is-size-4">Welkom op de website van de huisartsenpraktijk van het Medisch Centrum Alberick.</p>
+      <router-link to="/contact">
+        <div class="has-text-right-tablet" style="margin-bottom:1.5rm">Alberickstraat&nbsp;193, 5922&nbsp;BR,&nbsp;Venlo</div>
+      </router-link>
+      <p class="is-size-4 is-hidden-mobile">Welkom op de website van de huisartsenpraktijk van het Medisch&nbsp;Centrum&nbsp;Alberick.</p>
     </div>
   </section>
   <section class="section is-medium">
@@ -38,48 +43,21 @@
       <div class="columns align-items-flex-end">
         <div class="column is-6">
           <figure class="image" id="img-facebook-reactions">
-            <img src="/images/facebook-reactions.svg" alt="">
+            <img src="@/assets/home/facebook-reactions.svg" alt="Facebook reactions (love, laugh, thumbs up, surprised)" class="is-hidden-mobile">
+            <img src="@/assets/home/facebook-reactions-mobile.svg" alt="Facebook reactions (love, laugh, thumbs up, surprised)" class="is-hidden-tablet">
           </figure>
         </div>
         <div class="column is-6">
-          <p class="is-size-5">Follow us on Facebook to keep track of our latest news and updates.</p>
+          <p class="is-size-5">Follow us on Facebook to keep track of our latest news and&nbsp;updates.</p>
           <a href="#" class="button is-rounded is-large is-primary" target="_blank">Go to Facebook</a>
         </div>
       </div>
     </div>
   </section>
-  <section class="section is-medium">
-    <div class="container">
-      <div class="title is-4 has-text-centered margin-bottom-large">Bij Medisch Centrum Alberick werken</div>
-      <div class="columns is-multiline">
-        <div class="column is-4 big-numbers">
-          <div>4</div>
-          huisartsen
-        </div>
-        <div class="column is-4 big-numbers">
-          <figure class="image" style="width:83px;margin: 13px auto;">
-            <img src="/images/doctor-profile-generic.svg" alt="Doctor">
-          </figure>
-          een waarnemend huisarts
-        </div>
-        <div class="column is-4 big-numbers">
-          <div>9</div>
-          doktersassistentes
-        </div>
-        <div class="column is-4 big-numbers is-offset-2">
-          <div>3</div>
-          praktijkondersteuners
-        </div>
-        <div class="column is-4 big-numbers">
-          <div>3</div>
-          praktijkondersteuner huisarts geestelijke gezondheidszorg
-        </div>
-      </div>
-    </div>
-  </section>
+  <numbers-component />
   <section class="" style="background-color: #dad5eb">
-    <figure class="image">
-      <img src="@/assets/map-monochrome.png" srcset="@/assets/map-monochrome.png 1440w, @/assets/map-monochrome@2x.png 2550w" alt="Map of the area">
+    <figure class="image map">
+      <img src="@/assets/home/map-monochrome.png" srcset="@/assets/home/map-monochrome.png 1440w, @/assets/home/map-monochrome@2x.png 2550w" alt="Map of the area" class="is-hidden-mobile">
     </figure>
     <div class="section">
       <div class="container is-size-5">
@@ -91,87 +69,61 @@
       </div>
     </div>
   </section>
-  <section class="section is-medium">
+  <section class="section is-medium is-clipped">
     <div class="container">
-      <div class="columns align-items-flex-end">
-        <div class="column is-7 is-size-5">
-          <p>Tevens werken één of meer dagen in de week nog andere disciplines in onze praktijk: een diëtiste van het <a href="#">Groene Kruis</a>, steunkousen-specialisten <a href="#">Jolanda</a> en Sandra en podotherapie <a href="#">Hermanns</a>.
+      <div class="columns align-items-flex-end is-mobile">
+        <div class="column is-7-tablet is-9ish-mobile-woman-waving-hand is-size-5">
+          <figure class="image img-woman-waving-hand is-hidden-tablet">
+            <img src="@/assets/home/illustration-woman-waving-hand.svg" alt="">
+          </figure>
+          <p>Tevens werken één of meer dagen in de week nog andere disciplines in onze praktijk: een diëtiste van het
+            <a href="#">Groene Kruis</a>, steunkousen-specialisten
+            <a href="#">Jolanda</a> en Sandra en podotherapie
+            <a href="#">Hermanns</a>.
           </p>
         </div>
-        <div class="column is-5">
-          <figure class="image" id="img-woman-waving-hand">
-            <img src="@/assets/illustration-woman-waving-hand.svg" alt="">
+        <div class="column is-5-tablet is-hidden-mobile">
+          <figure class="image img-woman-waving-hand">
+            <img src="@/assets/home/illustration-woman-waving-hand.svg" alt="">
           </figure>
         </div>
       </div>
     </div>
   </section>
-  <section class="section is-medium">
-    <div class="container">
-      <figure class="image margin-bottom-medium" style="width:439px">
-        <img src="@/assets/logo-apotheek-pans.png" alt="Apotheek Pans">
-      </figure>
-      <div class="is-size-5">
-        <p>Ook is er een apotheek gevestigd — Service Apotheek Pans.</p>
-      </div>
-      <a href="#" target="_blank" class="button is-primary is-outlined is-rounded margin-top-medium is-medium">Visit Website</a>
-    </div>
-  </section>
-  <section class="section is-medium">
-    <div class="container">
-      <div class="columns is-mobile is-multiline justify-content-space-around align-items-center">
-        <div class="column is-narrow">
-          <figure class="image margin-bottom-medium" style="width:125px;margin-top:2rem;">
-            <img src="@/assets/logos/cohesie-logo.png" srcset="@/assets/logos/cohesie-logo.png 125w, @/assets/logos/cohesie-logo@2x.png 250w" alt="Cohesie">
-          </figure>
-        </div>
-        <div class="column is-narrow">
-          <figure class="image margin-bottom-medium" style="width:112px">
-            <img src="@/assets/logos/hazo24-logo.svg" alt="Hazo24">
-          </figure>
-        </div>
-        <div class="column is-narrow">
-          <figure class="image margin-bottom-medium" style="width:229px">
-            <img src="@/assets/logos/provico-logo.png" alt="Provico">
-          </figure>
-        </div>
-      </div>
-      <div class="columns is-mobile is-multiline justify-content-space-around align-items-center margin-bottom-medium-negate">
-        <div class="column is-narrow">
-          <figure class="image margin-bottom-medium" style="width:326px">
-            <img src="@/assets/logos/thuisartsnl-logo.png" srcset="@/assets/logos/thuisartsnl-logo.png 326w, @/assets/logos/thuisartsnl-logo@2x.png 652w" alt="Thuisarts.NL">
-          </figure>
-        </div>
-        <div class="column is-narrow">
-          <figure class="image margin-bottom-medium" style="width:307px">
-            <img src="@/assets/logos/uwzorgonline-logo.png" srcset="@/assets/logos/uwzorgonline-logo.png 307w, @/assets/logos/uwzorgonline-logo@3x.png, 614w" alt="Uw Zorg Online">
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
+  <apotheek-component />
+  <logos-component />
 </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import LogosComponent from './Logos.vue'
+import ApotheekComponent from './Apotheek.vue'
+import NumbersComponent from './Numbers.vue'
 
 export default {
   name: 'Home',
-  components: {}
+  components: {
+    LogosComponent,
+    ApotheekComponent,
+    NumbersComponent,
+  }
 }
 </script>
 
 <style lang="scss">
 #home-hero {
-    background-image: url('/images/hero-bg-blobs.svg'), linear-gradient(180deg, #ffffff 0%, #fefefe 100%);
+    background-image: url('../../assets/home/hero-bg-blobs.svg'), linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     background-size: 130vh, cover;
 
-    @media (min-width: $desktop) {
-        background-size: max(72rem, 160vh), cover;
+    .columns {
+        text-align: center;
+
+        @media (min-width: $desktop) {
+            background-size: max(72rem, 160vh), cover;
+            text-align: left;
+        }
     }
 
     .title {
@@ -179,15 +131,28 @@ export default {
         color: #222222;
     }
     .title.is-2 {
-        font-size: 2.6666666667rem;
+        font-size: 7.9vw;
         margin-bottom: 0;
+        @media (min-width: $desktop) {
+            font-size: 2rem;
+        }
+        @media (min-width: $widescreen) {
+            font-size: 2.6666666667rem;
+        }
     }
     .title.is-1 {
-        font-size: 6.3888888889rem;
-        line-height: 7rem;
-        margin-bottom: 6.25rem;
+        font-size: 17vw;
+        line-height: 19vw;
+        @media (min-width: $desktop) {
+            line-height: 5.2rem;
+            font-size: 5rem;
+        }
+        @media (min-width: $widescreen) {
+            line-height: 7rem;
+            font-size: 6.3888888889rem;
+            margin-bottom: 6.25rem;
+        }
     }
-
     .hero-foot {
         text-align: center;
         font-size: 1.3125rem;
@@ -210,6 +175,12 @@ export default {
     border-radius: 100%;
     color: #aca2cc;
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $tablet) {
+        margin-left: 0;
+    }
 }
 
 .icon-circle-thick {
@@ -222,18 +193,30 @@ export default {
 
 #img-facebook-reactions {
     width: 65vw;
-    margin-bottom: 2rem;
-    margin-left: auto;
+    margin-bottom: -1em;
+    margin-left: 0;
     margin-right: auto;
     @media (min-width: $tablet) {
+      margin-bottom: 2em;
         width: 22.75rem;
-        margin-top: -4rem;
-        margin-bottom: -4rem;
+        margin-top: -4em;
+        margin-bottom: -4em;
     }
 }
 
-#img-woman-waving-hand {
-    width: 65vw;
+.image.img-woman-waving-hand {
+    width: 60vw;
+
+    @media (max-width: $tablet - 1) {
+        float: right;
+        shape-outside: polygon(100% 0%, 94% 23%, 57% 31%, 45% 66%, 0 78%, 0 100%, 100% 100%);
+
+        position: relative;
+        margin-right: -3em;
+        margin-bottom: 0;
+        margin-top: calc(20vw);
+    }
+
     @media (min-width: $tablet) {
         width: 19.9375rem;
         margin-top: -4rem;
@@ -241,13 +224,21 @@ export default {
     }
 }
 
-.big-numbers {
-    text-align: center;
-    margin: 1rem 0;
-    font-size: $size-5;
-    & > div:first-child {
-        font-size: 4rem;
-        color: #222222;
+.image.map {
+    padding-top: 50%;
+    background-image: url("../../assets/home/map-monochrome.png");
+    background-size: cover;
+
+    @media (min-width: $tablet) {
+        padding-top: 0;
+        // padding-top: 34.7533632287%;
     }
+    // & > img {
+    //     bottom: 0;
+    //     left: 0;
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    // }
 }
 </style>

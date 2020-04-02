@@ -3,7 +3,7 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns is-variable is-8" style="align-items:baseline;">
-        <div class="column is-6">
+        <div class="column is-6 is-hidden-mobile">
           <p class="is-size-5 margin-bottom-medium">
             We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg Online.
           </p>

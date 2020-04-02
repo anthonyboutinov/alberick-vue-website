@@ -4,7 +4,7 @@
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
     <div class="container">
       <div class="navbar-brand">
-        <router-link class="navbar-item is-size-7" to="/">
+        <router-link class="navbar-item is-size-7-rem" to="/">
           Alberick — Medisch Centrum
         </router-link>
 
