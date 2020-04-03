@@ -1,9 +1,13 @@
 body {
   margin-top: $navbar-height;
   @media (max-width: $tablet - 1px) {
-    font-size: 14px;
+    font-size: $body-size-mobile;
   }
   overflow-x: hidden;
+}
+
+img {
+  font-size: 0.75rem !important;
 }
 
 .section {
@@ -47,11 +51,37 @@ body {
   font-weight: $weight-semibold;
 
   &.is-medium {
-    height: 2.7777777778rem;
+    height: 2.5rem;
   }
 
   &.is-large {
-    height: 3.1111111111rem;
+    height: 2.5rem;
+  }
+  @media (min-width: $tablet) {
+    &.is-medium {
+      height: 2.7777777778rem;
+    }
+
+    &.is-large {
+      height: 3.1111111111rem;
+    }
+  }
+
+  @media (max-width: $tablet - 1px) {
+    &,
+    &.is-rounded {
+      font-size: $size-5;
+      padding-left: 2em;
+      padding-right: 2em;
+
+      &.is-fullwidth {
+        &,
+        &-mobile {
+          padding-left: 0.2em;
+          padding-right: 0.2em;
+        }
+      }
+    }
   }
 
   &.is-white {
@@ -67,6 +97,11 @@ body {
   .container.is-9 {
     max-width: calc(#{$desktop - 2 * $gap} * 0.7457446809);
   }
+}
+
+.has-border-radius {
+  border-radius: $radius-large;
+  overflow: hidden;
 }
 
 .checkerboard-sections {
@@ -91,7 +126,6 @@ body {
     }
   }
 
-
   &-large {
     margin-bottom: 2rem !important;
 
@@ -99,7 +133,6 @@ body {
       margin-bottom: -2rem !important;
     }
   }
-
   @media (min-width: $tablet) {
     &-large {
       margin-bottom: 4rem !important;
@@ -133,7 +166,6 @@ body {
       margin-top: -2rem !important;
     }
   }
-
   @media (min-width: $tablet) {
     &-large {
       margin-top: 4rem !important;
@@ -192,46 +224,90 @@ strong {
   justify-content: space-between;
 }
 
-@media (min-width: $tablet) {
-    .has-text-right-tablet {
-        text-align: right;
-    }
-    .has-text-centered-tablet {
-        text-align: center;
-    }
+figure.image {
+  max-width: 100%;
 }
 
+.panel-component {
+  border-radius: $radius-large;
+  padding: 3rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fcfbfb;
+  background: linear-gradient(45deg, #fdfdfd 0%,#f9f9f9 96%);
+  color: $text;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+}
+
+a .panel-component {
+  @include gpurender;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before {
+    @include gpurender;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, #f9f9f9 0%,#ddd7ef 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+    border-radius: $radius-large;
+  }
+}
+
+a:focus,
+a:hover {
+  .panel-component::before {
+    opacity: 1;
+  }
+}
+
+a:active {
+  .panel-component::before {
+    opacity: 0.3;
+  }
+}
+@each $key in contain, cover, fill {
+  .has-ratio.#{$key} {
+    object-fit: $key;
+  }
+}
+@media (min-width: $tablet) {
+  .has-text-right-tablet {
+    text-align: right;
+  }
+
+  .has-text-centered-tablet {
+    text-align: center;
+  }
+}
 @media (max-width: $tablet - 1px) {
-  .is-fillwidth-mobile {
+  .is-fullwidth-mobile {
     &.image {
       margin-left: -$gap;
       margin-right: -$gap;
     }
+    &.button {
+      width: 100%;
+    }
   }
-
-  @each $key, $value in (
-    "1": 6.7222222222,
-    "2": 4.5,
-    "3": 3,
-    "4": 2,
-    "5": 1.3333333333,
-    "6": 1,
-  ) {
+  @each $key, $value in ("1": 6.7222222222, "2": 4.5, "3": 3, "4": 2, "5": 1.3333333333, "6": 1,) {
     .title.is-#{$key} {
-      font-size: calc(1.2rem +  #{$value}vw);
+      font-size: calc(1.2rem + #{$value}vw);
     }
   }
 }
-
-@each $key, $value in (
-  "1": 6.7222222222,
-  "2": 4.5,
-  "3": 3,
-  "4": 2,
-  "5": 1.3333333333,
-  "6": 1,
-  "7": 0.7777777778
-) {
+@each $key, $value in ("1": 6.7222222222, "2": 4.5, "3": 3, "4": 2, "5": 1.3333333333, "6": 1, "7": 0.7777777778) {
   .is-size-#{key}-rem {
     font-size: #{$value}rem;
   }

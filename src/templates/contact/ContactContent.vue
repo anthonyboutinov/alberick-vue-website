@@ -7,7 +7,7 @@
     <small class="has-text-grey">De praktijk is voor rolstoelen toegankelijk.
       <br> Via openbaar vervoer: buslijn 2 en 4, halte Azaleastraat.</small>
   </address>
-  <a href="#" target="_blank" class="button is-rounded is-primary is-outlined margin-bottom-medium">Map</a>
+  <a href="https://goo.gl/maps/g4PTygkCMs7kDXZq5" target="_blank" class="button is-rounded is-primary is-outlined margin-bottom-medium">Map</a>
   <div>
     Tel:
     <a href="tel:0773828182">077-3828182</a>

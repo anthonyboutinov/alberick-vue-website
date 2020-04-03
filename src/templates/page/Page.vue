@@ -21,12 +21,13 @@
   <div v-if="page" :class="{'alternate-sections': page.highlight_alternate_sections, 'is-even': highlightEvenSections, 'is-odd': highlightOddSections}" class="is-fullheight">
     <div class="page-head">
       <div class="container">
-        <h2 class="title is-3 has-text-weight-bold page-title">{{page.title}}</h2>
+        <h2 class="title is-3 has-text-weight-bold page-title" v-html="page.title"></h2>
       </div>
     </div>
     <div v-for="(section, index) in page.sections" v-bind:key="index">
       <generic-section v-if="section.type === 'generic'" v-bind:section="section" />
       <uwzorgonline-section v-if="section.type === 'custom' && section.custom_type === 'uwzorgonline'" v-bind:section="section" />
+      <columns-section v-if="section.type === 'custom' && section.custom_type === 'columns'" v-bind:section="section" />
     </div>
   </div>
 </div>
@@ -35,12 +36,14 @@
 <script>
 import GenericSection from './GenericSection.vue';
 import UwzorgonlineSection from './UwzorgonlineSection.vue';
+import ColumnsSection from './Columns.vue';
 import NotFound404 from '@/templates/not-found/NotFound.vue';
 
 export default {
   components: {
     GenericSection,
     UwzorgonlineSection,
+    ColumnsSection,
     NotFound404,
   },
   props: {
@@ -102,8 +105,8 @@ export default {
 
             Object.assign(self.page, self.page.acf);
             delete self.page.acf;
-            self.page.title = self.page.title.rendered;
-            console.log(self.page);
+            self.page.seo_title = self.page.title.rendered;
+            self.page.title = self.page.html_title || self.page.seo_title;
 
             this.$database.store(slug, self.page);
           })

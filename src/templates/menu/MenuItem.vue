@@ -1,5 +1,5 @@
 <template>
-<router-link :to="'/'+_slug" class="menu-item image" :class="{'is-4by3-tablet': !(ispartofprimarymenu && _slug === 'spoed'), 'is-8gap2by3-tablet': ispartofprimarymenu && _slug === 'spoed', 'has-radius': hasradius, ispartofprimarymenu}" :data-menu-item="slug"
+<router-link :to="'/'+_slug" class="menu-item image" :class="{'is-4by3-tablet': !(ispartofprimarymenu && _slug === 'spoed'), 'is-8gap2by3-tablet': ispartofprimarymenu && _slug === 'spoed', 'has-border-radius': hasradius, ispartofprimarymenu}" :data-menu-item="slug"
   :style="'background-image: url(/menu-items/mi-'+_slug+'.svg)'">
   <div class="has-ratio">
     <div class="menu-item-body" :class="{'has-background': !_nobackground}" v-html="title"></div>
@@ -35,7 +35,7 @@ export default {
     },
     _slug() {
       if (this.slug.substr(-1) === "/") {
-        return this.slug.replace(/^[a-z]{4,5}:\/{2}[a-z]{1,}:[0-9]{1,4}.(.*)/, '$1').replace(/\/$/, "");
+        return (new URL(this.slug)).pathname.replace(/^\/|\/$/g, '');
       } else {
         return this.slug;
       }
@@ -118,10 +118,6 @@ export default {
             padding-top: 36.42903226% !important;
 
         }
-    }
-
-    &.has-radius {
-        border-radius: $radius-large;
     }
 }
 

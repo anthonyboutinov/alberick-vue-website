@@ -29,13 +29,13 @@
   <section class="section is-medium">
     <a id="start"></a>
     <div class="container is-9">
-      <figure class="image is-fillwidth-mobile" style="margin-bottom:0.5rm">
-        <img src="@/assets/home/photo-alberick-building.jpg" srcset="@/assets/home/photo-alberick-building.jpg 701w, @/assets/home/photo-alberick-building@2x.jpg 1402w" alt="">
-      </figure>
       <router-link to="/contact">
+        <figure class="image is-fillwidth has-border-radius has-shadow" style="margin-bottom:0.5rem">
+          <img src="@/assets/home/photo-alberick-building.jpg" srcset="@/assets/home/photo-alberick-building.jpg 701w, @/assets/home/photo-alberick-building@2x.jpg 1402w" alt="">
+        </figure>
         <div class="has-text-right-tablet" style="margin-bottom:1.5rm">Alberickstraat&nbsp;193, 5922&nbsp;BR,&nbsp;Venlo</div>
       </router-link>
-      <p class="is-size-4 is-hidden-mobile">Welkom op de website van de huisartsenpraktijk van het Medisch&nbsp;Centrum&nbsp;Alberick.</p>
+      <p class="is-size-4 is-hidden-mobile margin-top">Welkom op de website van de huisartsen&shy;praktijk van het Medisch&nbsp;Centrum&nbsp;Alberick.</p>
     </div>
   </section>
   <section class="section is-medium">
@@ -149,7 +149,7 @@ export default {
         }
         @media (min-width: $widescreen) {
             line-height: 7rem;
-            font-size: 6.3888888889rem;
+            font-size: 6rem;
             margin-bottom: 6.25rem;
         }
     }
@@ -197,7 +197,7 @@ export default {
     margin-left: 0;
     margin-right: auto;
     @media (min-width: $tablet) {
-      margin-bottom: 2em;
+        margin-bottom: 2em;
         width: 22.75rem;
         margin-top: -4em;
         margin-bottom: -4em;

@@ -1,5 +1,5 @@
 <template>
-<div class="panel-component">
+<div class="panel-component" style="justify-content: space-between;">
   <figure class="image" :class="panel.image_class" :style="panel.image_style" v-if="panel.image">
     <img :src="panel.image" :alt="panel.title">
   </figure>
@@ -20,20 +20,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.panel-component {
-    border-radius: $radius-large;
-    padding: 3rem 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    background: #fcfbfb;
-    background: linear-gradient(45deg, #fdfdfd 0%,#f9f9f9 96%);
-
-    .title {
-        margin-bottom: 1rem;
-    }
-}
-</style>
+<!-- // <style lang="scss"> -->
+<!-- // .panel-component {
+//     border-radius: $radius-large;
+//     padding: 3rem 2rem;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     background: #fcfbfb;
+//     background: linear-gradient(45deg, #fdfdfd 0%,#f9f9f9 96%);
+//
+//     .title {
+//         margin-bottom: 1rem;
+//     }
+// } -->
+<!-- // </style> -->

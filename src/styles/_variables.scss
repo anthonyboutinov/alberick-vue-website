@@ -1,4 +1,5 @@
 $body-size: 18px;
+$body-size-mobile: 14px;
 /* -- */
 $size-1: 6.7222222222em;
 $size-2: 4.5em;
@@ -24,6 +25,8 @@ $weight-bold: 800;
 $purple: #574591;
 $primary: $purple;
 $link: #5C3EBC;
+$secondary: #fcd87b;
+$yellow: $secondary;
 /* -- */
 $gap: 32px;
 $desktop: 940px + (2 * $gap);

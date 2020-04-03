@@ -6,7 +6,7 @@
       <div class="navbar-brand">
         <router-link class="navbar-item is-size-7-rem" to="/">
           Alberick
-          <span class="is-hidden-xxs">—</span> Medisch Centrum
+          <span class="is-hidden-xxs" v-html="'&nbsp;—&nbsp;'"></span> Medisch Centrum
         </router-link>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" :aria-expanded="displayMenu" v-on:click="toggleMenu()">
