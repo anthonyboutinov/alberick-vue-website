@@ -1,23 +1,50 @@
 <template>
 <div>
   <address class="margin-bottom">
-    Alberickstraat 193
-    <br> 5922 BR, Venlo
+    <span v-html="contact.address_line_1"></span>
+    <span v-if="contact.address_line_2">
+      <br>
+      <span v-html="contact.address_line_2"></span>
+    </span>
     <br>
-    <small class="has-text-grey">De praktijk is voor rolstoelen toegankelijk.
-      <br> Via openbaar vervoer: buslijn 2 en 4, halte Azaleastraat.</small>
+    <small class="has-text-grey" v-html="contact.extra" v-if="contact.extra"></small>
   </address>
-  <a href="https://goo.gl/maps/g4PTygkCMs7kDXZq5" target="_blank" class="button is-rounded is-primary is-outlined margin-bottom-medium">Map</a>
+  <a v-if="contact.map_href" :href="contact.map_href" target="_blank" class="button is-rounded is-primary is-outlined margin-bottom-medium">Map</a>
   <div>
-    Tel:
-    <a href="tel:0773828182">077-3828182</a>
-    <br> Fax: 077-3961998
-    <br> E-mail:
-    <a href="mailto:info@alberick.nl">info@alberick.nl</a> (niet voor medische vragen)
-    <br>
-    <a class="icon is-medium margin-top" href="#" target="_blank">
-      <i class="fab fa-2x fa-facebook-square"></i>
-    </a>
+
+    <span v-if="contact.telephone">Tel:
+      <a :href="telephoneHref">{{contact.telephone}}</a>
+    </span>
+
+    <span v-if="contact.fax">
+      <br>Fax: {{contact.fax}}</span>
+
+    <span v-if="contact.email">
+      <br>E-mail:
+      <a :href="'mailto:' + contact.email">{{contact.email}}</a>
+      <span v-if="contact.email_extra" v-html="contact.email_extra"></span>
+    </span>
+
+    <span v-if="contact.social_links">
+      <br>
+      <a class="icon is-medium margin-top" :href="socialLink.href" target="_blank" v-for="socialLink in contact.social_links" v-bind:key="socialLink.slug.value" :title="socialLink.slug.label">
+        <i class="fab fa-2x" :class="'fa-' + socialLink.slug.value"></i>
+        <span class="sr-only">{{socialLink.slug.label}}</span>
+      </a>
+    </span>
   </div>
 </div>
 </template>
+
+<script>
+export default {
+  props: {
+    contact: Object,
+  },
+  computed: {
+    telephoneHref() {
+      return 'tel:' + this.contact.telephone.replace(/[^0-9*#+]/g, "");
+    },
+  }
+}
+</script>

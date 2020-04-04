@@ -1,22 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../templates/home/Home.vue'
-import Contact from '../templates/contact/Contact.vue'
+// import Home from '../templates/home/Home.vue'
+// import Contact from '../templates/contact/Contact.vue'
 import Menu from '../templates/menu/Menu.vue'
 import Page from '../templates/page/Page.vue'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+  {
     path: '/',
     name: 'home',
-    component: Home
+    component: Page
   },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact
-  },
+  // {
+  //   path: '/contact',
+  //   name: 'contact',
+  //   component: Contact
+  // },
   {
     path: '/menu',
     name: 'menu',

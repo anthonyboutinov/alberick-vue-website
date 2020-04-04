@@ -104,13 +104,6 @@ img {
   overflow: hidden;
 }
 
-.checkerboard-sections {
-  & > .section:nth-child(odd) {
-    // background-color: #f3f3f3;
-    background-color: #f8f8f8;
-  }
-}
-
 .margin-bottom {
   margin-bottom: 1rem !important;
 

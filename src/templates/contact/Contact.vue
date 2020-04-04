@@ -8,7 +8,7 @@
     </div>
     <div class="section" style="padding-top:0;">
       <div class="container">
-        <contact-content-component />
+        <contact-content-component v-bind:contact="contact" />
       </div>
     </div>
   </section>
@@ -18,16 +18,14 @@
       <div class="container">
         <div class="columns is-variable is-8" style="align-items:baseline;">
           <div class="column is-6">
-            <p class="is-size-5 margin-bottom-medium">
-              We are a general practice medical center caring for nearly 11,000 patients in and around Blerick. We provide consultations, examinations, operations and home visits. We also provide services and care via Uw Zorg Online.
-            </p>
-            <div class="menu-item-standalone">
-              <menu-item slug="online-services" title="Online services" style="border-radius:12px;" />
+            <div class="is-size-5 margin-bottom-medium" v-html="about.content"></div>
+            <div class="menu-item-standalone" v-if="about.menu_item_active">
+              <menu-item :slug="about.menu_item" :title="about.menu_item_text" class="has-border-radius" />
             </div>
           </div>
           <div class="column is-6">
             <h3 class="title is-4">Contact</h3>
-            <contact-content-component />
+            <contact-content-component v-bind:contact="contact" />
           </div>
         </div>
       </div>
@@ -45,6 +43,10 @@ export default {
     MenuItem,
     ContactContentComponent,
   },
+  props: {
+    about: Object,
+    contact: Object,
+  }
 }
 </script>
 
