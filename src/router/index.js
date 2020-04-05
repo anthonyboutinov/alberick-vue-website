@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../templates/home/Home.vue'
-// import Contact from '../templates/contact/Contact.vue'
 import Menu from '../templates/menu/Menu.vue'
 import Page from '../templates/page/Page.vue'
+import MetaManager from './MetaManager.js'
 
 Vue.use(VueRouter)
 
@@ -13,15 +12,13 @@ const routes = [
     name: 'home',
     component: Page
   },
-  // {
-  //   path: '/contact',
-  //   name: 'contact',
-  //   component: Contact
-  // },
   {
     path: '/menu',
     name: 'menu',
-    component: Menu
+    component: Menu,
+    meta: {
+      title: 'Menu'
+    }
   },
   {
     path: '/:slug',
@@ -31,6 +28,9 @@ const routes = [
   {
     path: '*',
     name: 'not-found',
+    meta: {
+      title: 'Niet gevonden'
+    },
     // route level code-splitting
     // this generates a separate chunk ([name].[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -41,7 +41,6 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  // base: process.env.BASE_URL,
   base: '/',
   routes,
   scrollBehavior(to, from, savedPosition) {
@@ -78,5 +77,7 @@ router.beforeEach((to, from, next) => {
   Vue.prototype.PREV_ROUTE = from.fullPath;
   next();
 });
+
+new MetaManager(router, 'Alberick Medisch Centrum');
 
 export default router

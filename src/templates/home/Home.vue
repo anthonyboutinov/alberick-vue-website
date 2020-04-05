@@ -38,15 +38,6 @@ export default {
   props: {
     page: Object,
   },
-  // created() {
-  //   // If first section is not Hero, add it. (have to check because this
-  //   // directly) manipulates the cached value
-  //   if (this.page.sections[0].type !== 'hero') {
-  //     this.page.sections.unshift({
-  //       type: 'hero'
-  //     });
-  //   }
-  // }
 }
 </script>
 

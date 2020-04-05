@@ -100,14 +100,14 @@ export default {
 
       if (this.$database.hasCached(this.slug)) {
         this.page = this.$database.getCached(this.slug);
-        console.log("Using cached version of /" + this.slug);
+        // console.log("Using cached version of /" + this.slug);
 
       } else {
         this.loading = true;
         const self = this;
         this.$database.getItems("pages?fields=id,title,slug,acf&slug=" + this.slug)
           .then(response => {
-            console.log("Loaded " + this.slug + " from the server");
+            // console.log("Loaded " + this.slug + " from the server");
             if (!response.data[0]) {
               throw {
                 data: {
@@ -123,6 +123,7 @@ export default {
             delete self.page.acf;
             self.page.seo_title = self.page.title.rendered;
             self.page.title = self.page.html_title || self.page.seo_title;
+            self.$metaManager.setTitle(self.page.slug === 'home' ? null : self.page.seo_title);
 
             this.$database.store(this.slug, self.page);
           })
