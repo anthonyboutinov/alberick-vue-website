@@ -4,8 +4,13 @@
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
     <div class="container">
       <div class="navbar-brand">
-        <router-link class="navbar-item is-size-7-rem" to="/">
-          Medisch Centrum Alberick
+        <router-link class="navbar-item is-size-7-rem navbar-logo-button" to="/" role="button">
+          <div class="navbar-logo">
+            <div class="image">
+              <img src="@/assets/alberick-medisch-centrum-primary-logo-centered.svg" alt="Medisch Centrum Alberick Logo SVG">
+            </div>
+          </div>
+          <div>Medisch Centrum Alberick</div>
         </router-link>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" :aria-expanded="displayMenu" v-on:click="toggleMenu()">
@@ -40,7 +45,7 @@
     <div class="container has-text-centered is-size-7">
       <p>
         ©
-        <router-link to="/" class="link-hidden">Alberick</router-link> 2020.
+        <router-link to="/" class="link-hidden">Medisch Centrum Alberick</router-link> 2020.
         <router-link to="/privacy-policy">Privacy &amp; Cookies</router-link>.
         <router-link to="/terms">T&amp;C's</router-link>. Website by
         <a href="https://boutinov.com" target="_blank">Boutinov.com</a>. Artwork design by
@@ -76,14 +81,14 @@ export default {
   methods: {
     toggleContact() {
       if (!this.displayContact) {
-        this.$router.push("contact");
+        this.$router.push("/contact");
       } else {
         this.$router.go(-1);
       }
     },
     toggleMenu() {
       if (!this.displayMenu) {
-        this.$router.push("menu");
+        this.$router.push("/menu");
       } else {
         this.$router.go(-1);
       }
@@ -96,7 +101,7 @@ export default {
 .navbar-item {
     font-weight: $weight-semibold;
 }
-footer.footer {
+#footer {
     a[href] {
         color: $primary;
     }
@@ -104,6 +109,28 @@ footer.footer {
 
 .navbar .button.is-white {
     background-color: rgba(255,255,255,0);
+}
+
+.navbar-logo-button {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+$navbar-logo-width: 1.75em;
+$navbar-logo-negative-margin: 0.20652173913;
+.navbar-logo {
+  width: $navbar-logo-width;
+  height: $navbar-logo-width;
+  margin-right: 0.62em;
+  .image {
+      margin: $navbar-logo-width * $navbar-logo-negative-margin * -1;
+      width: $navbar-logo-width * (1 + 2 * $navbar-logo-negative-margin);
+      height: $navbar-logo-width * (1 + 2 * $navbar-logo-negative-margin);
+      img {
+        max-height: none;
+      }
+  }
 }
 
 @media (max-width: $tablet - 1px) {

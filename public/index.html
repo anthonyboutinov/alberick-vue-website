@@ -12,6 +12,13 @@
   <script src="https://kit.fontawesome.com/802ce6f7d8.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <?php wp_head(); ?>
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon-16x16.png">
+  <link rel="manifest" href="<%= BASE_URL %>site.webmanifest">
+  <link rel="mask-icon" href="<%= BASE_URL %>safari-pinned-tab.svg" color="#462f91">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -60,25 +67,31 @@
                 recursivelyRender($key, $value);
               }
 
-    		?></div>
-      </article> <?php endwhile; ?>
+    		?>
+        </div>
+      </article>
+      <?php endwhile; ?>
     </main>
-    <?php if (WP_DEBUG) { ?><style>
+    <?php if (WP_DEBUG) { ?>
+    <style>
       section {
         border: 1px solid #eeeeee;
         padding: 1.5rem 2rem;
         margin-bottom: 3rem;
       }
+
       .debug {
         padding: 1.5rem 2rem;
         background-color: #eeeeee;
         font-size: 2rem;
         margin-bottom: 3rem;
       }
+
       pre {
         font-size: 1rem;
       }
-    </style><?php } ?>
+    </style>
+    <?php } ?>
   </noscript>
   <div id="app"></div>
   <!-- built files will be auto injected -->

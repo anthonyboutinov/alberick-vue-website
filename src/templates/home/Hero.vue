@@ -4,7 +4,11 @@
     <div class="container">
       <div class="columns align-items-center">
         <div class="column is-6">
-          <div id="hero-logo">LOGO</div>
+          <figure id="hero-logo">
+            <div class="image">
+              <img src="@/assets/alberick-medisch-centrum-primary-logo-centered.svg" alt="Medisch Centrum Alberick Logo SVG">
+            </div>
+          </figure>
           <div class="title is-2">Medisch Centrum</div>
           <div class="title is-1">Alberick</div>
           <!-- <router-link to="#start" class="button is-primary is-large is-rounded is-hidden-mobile">Begin</router-link> -->
@@ -88,21 +92,23 @@ export default {
     margin-right: -4px;
 }
 
+$hero-logo-width: 6.25rem;
+$hero-logo-negative-margin: 0.20652173913;
 #hero-logo {
-    width: 6.25rem;
-    height: 6.25rem;
-    line-height: 6.25rem;
-    font-size: 0.75em;
-    border: 1px solid #aca2cc;
-    text-align: center;
-    border-radius: 100%;
-    color: #aca2cc;
-    margin-bottom: 1rem;
+    width: $hero-logo-width;
+    height: $hero-logo-width;
+    margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
 
     @media (min-width: $tablet) {
         margin-left: 0;
+    }
+
+    .image {
+        margin: $hero-logo-width * $hero-logo-negative-margin * -1;
+        width: $hero-logo-width * (1 + 2 * $hero-logo-negative-margin);
+        height: $hero-logo-width * (1 + 2 * $hero-logo-negative-margin);
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-<router-link :to="'/'+_slug" class="menu-item image" :class="_class" :data-menu-item="slug" :style="_style" :data-background="BASE_URL+'menu-items/mi-'+_slug+'.svg'">
+<router-link :to="'/'+_slug" class="menu-item image" :class="_class" :data-menu-item="slug" :style="_style">
   <div class="has-ratio">
     <div class="menu-item-body" :class="{'has-background': !_nobackground}" v-html="title"></div>
   </div>

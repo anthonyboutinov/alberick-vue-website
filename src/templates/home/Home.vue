@@ -1,15 +1,15 @@
 <template>
 <div class="alternate-sections is-even">
+  <hero-section v-bind:about="page.about" />
   <div v-for="(section, index) in page.sections" v-bind:key="index">
-    <hero-section v-if="section.type === 'hero'" v-bind:about="page.about" />
     <welcome-section v-if="section.type === 'welcome'" v-bind:contact="page.contact" v-bind:section="section" />
     <facebook-section v-if="section.type === 'facebook'" v-bind:contact="page.contact" v-bind:section="section" />
     <numbers-section v-if="section.type === 'numbers'" v-bind:section="section" />
     <map-section v-if="section.type === 'map'" v-bind:section="section" />
     <workshops-section v-if="section.type === 'workshops'" v-bind:section="section" />
     <apotheek-section v-if="section.type === 'apotheek'" v-bind:section="section" />
-    <logos-section v-if="section.type === 'logos'" />
   </div>
+  <logos-section />
 </div>
 </template>
 
@@ -38,15 +38,15 @@ export default {
   props: {
     page: Object,
   },
-  created() {
-    // If first section is not Hero, add it. (have to check because this
-    // directly) manipulates the cached value
-    if (this.page.sections[0].type !== 'hero') {
-      this.page.sections.unshift({
-        type: 'hero'
-      });
-    }
-  }
+  // created() {
+  //   // If first section is not Hero, add it. (have to check because this
+  //   // directly) manipulates the cached value
+  //   if (this.page.sections[0].type !== 'hero') {
+  //     this.page.sections.unshift({
+  //       type: 'hero'
+  //     });
+  //   }
+  // }
 }
 </script>
 

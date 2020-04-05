@@ -3,7 +3,7 @@
   <div v-if="loading" class="hero is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered has-text-grey-light">
-        Loading...
+        Aan het laden...
       </div>
     </div>
   </div>
