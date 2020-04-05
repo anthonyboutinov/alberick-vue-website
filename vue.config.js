@@ -1,4 +1,10 @@
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/wp-content/themes/alberick-vue.progressive-vuewp.boutinov/'
+    : '/',
+  indexPath: process.env.NODE_ENV === 'production'
+    ? 'index.html'
+    : 'index.php',
   css: {
     loaderOptions: {
       sass: {

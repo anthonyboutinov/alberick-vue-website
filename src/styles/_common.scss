@@ -1,3 +1,7 @@
+html {
+  margin-top: 0 !important;
+}
+
 body {
   margin-top: $navbar-height;
   @media (max-width: $tablet - 1px) {

@@ -1,6 +1,5 @@
 <template>
-<router-link :to="'/'+_slug" class="menu-item image" :class="{'is-4by3-tablet': !(ispartofprimarymenu && _slug === 'spoed'), 'is-8gap2by3-tablet': ispartofprimarymenu && _slug === 'spoed', 'has-border-radius': hasradius, ispartofprimarymenu}" :data-menu-item="slug"
-  :style="'background-image: url(/menu-items/mi-'+_slug+'.svg)'">
+<router-link :to="'/'+_slug" class="menu-item image" :class="_class" :data-menu-item="slug" :style="_style" :data-background="BASE_URL+'menu-items/mi-'+_slug+'.svg'">
   <div class="has-ratio">
     <div class="menu-item-body" :class="{'has-background': !_nobackground}" v-html="title"></div>
   </div>
@@ -40,6 +39,17 @@ export default {
         return this.slug;
       }
     },
+    _class() {
+      return {
+        'is-4by3-tablet': !(this.ispartofprimarymenu && this._slug === 'spoed'),
+        'is-8gap2by3-tablet': this.ispartofprimarymenu && this._slug === 'spoed',
+        'has-border-radius': this.hasradius,
+        ispartofprimarymenu: this.ispartofprimarymenu
+      }
+    },
+    _style() {
+      return 'background-image: url('+require('@/assets/menu-items/mi-'+this._slug+'.svg')+')'
+    }
   }
 }
 </script>

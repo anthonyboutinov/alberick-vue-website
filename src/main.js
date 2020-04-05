@@ -7,23 +7,13 @@ import AxiosDatabase from './AxiosDatabase.js';
 
 Vue.config.productionTip = false
 
-
-
 const databaseParams = {
-
-  // Directus:
-  // url: "http://localhost:8888/",
-  // project: "alberick",
-  // storage: window.localStorage
-
   // Wordpress:
-  url: "http://192.168.0.109:8888/wp-json/wp/v2/",
-
+  url: (process.env.NODE_ENV === 'development' ? "http://192.168.0.109:8888" : '') + "/wp-json/wp/v2/",
 };
 
 Object.defineProperties(Vue.prototype, {
   $database: {
-    // value: new DirectusSDK(databaseParams)
     value: new AxiosDatabase(databaseParams)
   }
 });

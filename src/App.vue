@@ -5,8 +5,7 @@
     <div class="container">
       <div class="navbar-brand">
         <router-link class="navbar-item is-size-7-rem" to="/">
-          Alberick
-          <span class="is-hidden-xxs" v-html="'&nbsp;—&nbsp;'"></span> Medisch Centrum
+          Medisch Centrum Alberick
         </router-link>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" :aria-expanded="displayMenu" v-on:click="toggleMenu()">
@@ -71,7 +70,7 @@ export default {
       return this.$route.name === 'menu';
     },
     displayContact() {
-      return this.$route.name === 'contact';
+      return this.$route.name === 'page' && this.$route.params.slug === 'contact';
     },
   },
   methods: {
@@ -110,11 +109,6 @@ footer.footer {
 @media (max-width: $tablet - 1px) {
     .navbar-brand > .navbar-item {
         padding-left: 1.5rem;
-    }
-}
-@media (max-width: 290px) {
-    .is-hidden-xxs {
-        display: none;
     }
 }
 </style>

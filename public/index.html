@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <script src="https://kit.fontawesome.com/802ce6f7d8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but the website of Alberick doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <!-- <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title> -->
+  <script src="https://kit.fontawesome.com/802ce6f7d8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <?php wp_head(); ?>
+</head>
+
+<body>
+  <noscript>
+
+    <main>
+      <?php while (have_posts()): the_post(); ?>
+
+      <article>
+        <header>
+          <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        </header>
+
+        <div class="entry-content">
+          <?php
+          		the_content();
+              $fields = get_fields();
+
+              function recursivelyRender($key, $value) {
+                if (is_array($value)) {
+                  $type = $key === 'sections' ? 'section' : 'div';
+                  foreach ($value as $_key => $_value) {
+                    echo "<".$type." data-__noscript__key='".$_key."'>";
+                    recursivelyRender($_key, $_value);
+                    echo "</".$type.">";
+                  }
+                } else {
+                  if ($key === 'image' || $key === 'cover_image') {
+                    echo "<img src='".$value."''>";
+                  } else if ($key === 'url' || $key === 'link' || $key === 'href' || $key === 'menu_item' || $key === 'slug') {
+                    echo "<a href='".$value."''>".$value."</a>";
+                  } else if ($key === 'title') {
+                    echo "<h2>".$value."</h2>";
+                  } else if (strpos($key, 'style') !== false || strpos($key, 'classes') !== false || $key === 'type') {
+                    // do nothing;
+                  } else {
+                    echo "<div>".$value."</div>";
+                  }
+                }
+              }
+
+              foreach($fields as $key => $value) {
+                if (WP_DEBUG) {
+                  echo "<div class='debug'>".$key .": "; print("<pre>".print_r($value,true)."</pre></div>");
+                }
+                recursivelyRender($key, $value);
+              }
+
+    		?></div>
+      </article> <?php endwhile; ?>
+    </main>
+    <?php if (WP_DEBUG) { ?><style>
+      section {
+        border: 1px solid #eeeeee;
+        padding: 1.5rem 2rem;
+        margin-bottom: 3rem;
+      }
+      .debug {
+        padding: 1.5rem 2rem;
+        background-color: #eeeeee;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+      pre {
+        font-size: 1rem;
+      }
+    </style><?php } ?>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
