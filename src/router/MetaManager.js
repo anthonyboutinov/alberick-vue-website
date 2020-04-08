@@ -2,8 +2,9 @@ import Vue from 'vue'
 
 export default class MetaManager {
 
-  constructor(router, baseTitle) {
+  constructor(router, baseTitle, baseSummary) {
     this.baseTitle = baseTitle;
+    this.baseSummary = baseSummary;
     router.beforeEach((to, from, next) => {
       document.title = this.title(to.meta ? to.meta.title : null);
       next();
@@ -16,11 +17,15 @@ export default class MetaManager {
     return title ? title + ' — ' + this.baseTitle : this.baseTitle;
   }
 
-  setTitle(title) {
-    // if (!this.headTitleEl) {
-    //   this.headTitleEl = document.querySelector('head title');
-    // }
-    document.title = this.title(title);
+  setTitle(_title) {
+    const title = this.title(_title);
+    document.title = title;
+    document.querySelector('head meta[property="og:title"]').setAttribute('content', title);
+    document.querySelector('head meta[name="twitter:title"]').setAttribute('content', title);
   }
+
+  // setSummary(summary) {
+  //   document.querySelector('head meta[name="twitter:card"]').setAttribute('value', summary || this.baseSummary);
+  // }
 
 }

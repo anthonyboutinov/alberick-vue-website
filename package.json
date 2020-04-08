@@ -1,12 +1,13 @@
 {
   "name": "alberick-vue",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && mv build/index.html build/index.php",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "preinstall": "npx npm-force-resolutions"
+    "afterbuild": "mv dist/index.html dist/index.php",
+    "resolve": "npx npm-force-resolutions"
   },
   "dependencies": {
     "axios": "^0.19.2",
