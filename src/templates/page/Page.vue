@@ -86,6 +86,17 @@ export default {
     },
   },
   created() {
+    // Redirect old link from other websites that contain .html to the current routes
+    if (this.slug.includes('.html')) {
+      const cleanSlug = this.slug.substring(0, this.slug.indexOf(".html"));
+      this.$router.push({
+        name: 'page',
+        params: {
+          slug: cleanSlug
+        }
+      });
+    }
+
     // fetch the data when the view is created and the data is
     // already being observed
     this.fetchData()

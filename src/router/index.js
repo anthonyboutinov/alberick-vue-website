@@ -20,6 +20,29 @@ const routes = [
       title: 'Menu'
     }
   },
+  // Redirect mismatching old website's routes to the updated ones
+  {
+    path: '/privacyreglement',
+    redirect: '/privacy-policy'
+  },
+  {
+    path: '/speciale_onderzoeken',
+    redirect: '/speciale-onderzoeken'
+  },
+  {
+    path: '/labonderzoek',
+    redirect: '/lab'
+  },
+  {
+    path: '/interessante_links',
+    redirect: '/links'
+  },
+
+  {
+    path: '/route',
+    redirect: '/contact'
+  },
+
   {
     path: '/:slug',
     name: 'page',
