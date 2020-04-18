@@ -16,6 +16,7 @@ yarn global add @vue/cli
 ```
 
 ## Project setup
+Install dependencies:
 ```
 npm install
 ```
@@ -56,4 +57,4 @@ npm run resolve
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## License
-This work is copyrighted and cannot be reproduced without a written permission. © 2020 @anthonyboutinov. All rights reserved. Alberick logo, photos etc. © 2020 Alberick Medisch Centrum. All rights reserved. Artwork design by pch.vector / Freepik.
+© 2020 @anthonyboutinov. All rights reserved. Alberick logo, photos etc. © 2020 Alberick Medisch Centrum. All rights reserved. Vector artwork design by pch.vector / Freepik.

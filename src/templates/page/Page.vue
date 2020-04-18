@@ -8,15 +8,15 @@
     </div>
   </div>
 
-  <div v-if="error && error.data.status !== 404" class="hero is-primary is-fullheight is-bold">
+  <!-- <div v-if="error && error.data.status !== 404" class="hero is-primary is-fullheight is-bold">
     <div class="hero-body">
       <div class="container has-text-centered is-size-5">
         {{error}}
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <NotFound404 v-if="error && error.data.status === 404" />
+  <!-- <NotFound404 v-if="error && error.data.status === 404" /> -->
 
   <div v-if="page && pageType === 'variable'" :class="{'alternate-sections': page.highlight_alternate_sections, 'is-even': highlightEvenSections, 'is-odd': highlightOddSections}" class="is-fullheight">
     <div class="page-head">
@@ -40,7 +40,7 @@
 import GenericSection from './GenericSection.vue';
 import UwzorgonlineSection from './UwzorgonlineSection.vue';
 import ColumnsSection from './Columns.vue';
-import NotFound404 from '@/templates/not-found/NotFound.vue';
+// import NotFound404 from '@/templates/not-found/NotFound.vue';
 import ContactPage from '@/templates/contact/Contact.vue';
 import HomePage from '@/templates/home/Home.vue';
 
@@ -49,7 +49,7 @@ export default {
     GenericSection,
     UwzorgonlineSection,
     ColumnsSection,
-    NotFound404,
+    // NotFound404,
     ContactPage,
     HomePage,
   },
@@ -116,7 +116,7 @@ export default {
       } else {
         this.loading = true;
         const self = this;
-        this.$database.getItems("pages?fields=id,title,slug,acf&slug=" + this.slug)
+        this.$database.getPage(this.slug)
           .then(response => {
             // console.log("Loaded " + this.slug + " from the server");
             if (!response.data[0]) {
@@ -139,11 +139,20 @@ export default {
             this.$database.store(this.slug, self.page);
           })
           .catch(error => {
-            self.loading = false;
-            // if (error.data.status === 404) {
-            //   //...
-            // }
-            self.error = error;
+            // console.log(error)
+            if (!error.data) {
+              this.$router.push({
+                name: 'networkIssue'
+              })
+            } else if (error.data.status === 404) {
+              this.$router.push({
+                name: 'notFound'
+              })
+            } else {
+              this.$router.push({
+                name: 'networkIssue'
+              })
+            }
           });
 
       }

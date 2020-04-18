@@ -25,8 +25,7 @@ export default {
   },
   computed: {
     facebookHref() {
-      console.log(this.contact.social_links.find(x => x.slug.label === 'Facebook'));
-      return this.contact.social_links.find(x => x.slug.label === 'Facebook').href;
+      return this.contact.social_links.find(x => x.slug.label === 'Facebook').href
     }
   },
 }

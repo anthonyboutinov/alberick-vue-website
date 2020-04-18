@@ -2,13 +2,20 @@ import axios from 'axios';
 
 export default class AxiosDatabase {
   constructor(params) {
-    this.url = params.url;
     this.temporaryStorage = {};
+    this.apiClient = axios.create({
+      baseURL: params.url,
+      withCredentials: false,
+      headers: {
+        Accept: 'application/json',
+        'Content-type': 'application/json',
+      }
+    });
+
   }
 
-  getItems(request) {
-    // console.log(this.url + request);
-    return axios.get(this.url + request);
+  get(request) {
+    return this.apiClient.get(request);
   }
 
   hasCached(slug) {
@@ -24,5 +31,9 @@ export default class AxiosDatabase {
     if (process.env.NODE_ENV !== 'development') {
       this.temporaryStorage[slug] = data;
     }
+  }
+
+  getPage(slug) {
+    return this.get("pages?fields=id,title,slug,acf&slug=" + slug);
   }
 }

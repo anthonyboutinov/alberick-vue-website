@@ -3,11 +3,11 @@ import VueRouter from 'vue-router'
 import Menu from '../templates/menu/Menu.vue'
 import Page from '../templates/page/Page.vue'
 import MetaManager from './MetaManager.js'
+import NetworkIssue from '../templates/network-issue/NetworkIssue.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'home',
     component: Page
@@ -19,6 +19,26 @@ const routes = [
     meta: {
       title: 'Menu'
     }
+  },
+  {
+    path: '/not-found',
+    name: 'notFound',
+    meta: {
+      title: 'Niet gevonden'
+    },
+    // route level code-splitting
+    // this generates a separate chunk ([name].[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import ( /* webpackChunkName: "not-found" */ '../templates/not-found/NotFound.vue')
+  },
+  {
+    path: '/network-issue',
+    name: 'networkIssue',
+    meta: {
+      title: 'Netwerkprobleem'
+    },
+    component: NetworkIssue
   },
   // Redirect mismatching old website's routes to the updated ones
   {
@@ -50,15 +70,9 @@ const routes = [
   },
   {
     path: '*',
-    name: 'not-found',
-    meta: {
-      title: 'Niet gevonden'
-    },
-    // route level code-splitting
-    // this generates a separate chunk ([name].[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import ( /* webpackChunkName: "not-found" */ '../templates/not-found/NotFound.vue')
+    redirect: {
+      name: 'notFound'
+    }
   }
 ]
 
