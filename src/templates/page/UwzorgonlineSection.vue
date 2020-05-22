@@ -6,7 +6,7 @@
 
       <div class="column is-7">
         <img class="image margin-bottom-medium" src="@/assets/logos/uwzorgonline-logo.png" srcset="@/assets/logos/uwzorgonline-logo.png 307w, @/assets/logos/uwzorgonline-logo@3x.png, 614w" alt="Uw Zorg Online Logo" style="width:17.0555555556rem;">
-        <a href="https://alberick.uwartsonline.nl/pages/MijnAccount.asp?articleid=192153" target="_blank" class="button is-large is-primary is-rounded margin-bottom-medium is-fullwidth-mobile">Inloggen en&nbsp;registratie</a>
+        <a href="https://alberick.uwzorgonline.nl/inloggen-en-registratie/app/" target="_blank" class="button is-large is-primary is-rounded margin-bottom-medium is-fullwidth-mobile">Inloggen en&nbsp;registratie</a>
         <h4 class="title is-5">Download de app</h4>
 
         <div class="columns margin-bottom is-mobile is-variable is-1">
@@ -16,7 +16,7 @@
             </a>
           </div>
           <div class="column is-narrow is-6-mobile">
-            <a href="https://play.google.com/store/apps/details?id=nl.mediapp.pharmeon&hl=en" target="_blank" class="image">
+            <a href="https://alberick.uwzorgonline.nl/inloggen-en-registratie/app/" target="_blank" class="image">
               <img src="@/assets/custom-sections/google-play-icon.png" srcset="@/assets/custom-sections/google-play-icon.png 182w, @/assets/custom-sections/google-play-icon@3x.png 364w" style="width:10.1111111111rem;">
             </a>
           </div>

@@ -22,7 +22,7 @@
     <span v-if="contact.email">
       <br>E-mail:
       <a :href="'mailto:' + contact.email">{{contact.email}}</a>
-      <span v-if="contact.email_extra" v-html="contact.email_extra"></span>
+      <span v-if="contact.email_extra" v-html="'&nbsp;' + contact.email_extra"></span>
     </span>
 
     <span v-if="contact.social_links">

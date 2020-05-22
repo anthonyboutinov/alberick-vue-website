@@ -1,5 +1,5 @@
 <template>
-<div class="alternate-sections is-even">
+<div class="alternate-sections is-odd">
   <hero-section v-bind:about="page.about" />
   <div v-for="(section, index) in page.sections" v-bind:key="index">
     <welcome-section v-if="section.type === 'welcome'" v-bind:contact="page.contact" v-bind:section="section" />
@@ -8,8 +8,9 @@
     <map-section v-if="section.type === 'map'" v-bind:section="section" />
     <workshops-section v-if="section.type === 'workshops'" v-bind:section="section" />
     <apotheek-section v-if="section.type === 'apotheek'" v-bind:section="section" />
+    <logos-section v-if="section.type === 'logos'" v-bind:section="section" />
+    <generic-section v-if="section.type === 'generic'" v-bind:section="section" />
   </div>
-  <logos-section />
 </div>
 </template>
 
@@ -22,6 +23,7 @@ import MapSection from './Map.vue'
 import NumbersSection from './Numbers.vue'
 import WelcomeSection from './Welcome.vue'
 import WorkshopsSection from './Workshops.vue'
+import GenericSection from './Generic.vue'
 
 export default {
   name: 'Home',
@@ -34,15 +36,10 @@ export default {
     NumbersSection,
     WelcomeSection,
     WorkshopsSection,
+    GenericSection,
   },
   props: {
     page: Object,
   },
 }
 </script>
-
-<style lang="scss">
-.home-sections > div:nth-child(odd) > .section {
-    background-color: $white-bis;
-}
-</style>

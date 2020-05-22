@@ -4,10 +4,11 @@
     <div class="title is-4 has-text-centered-tablet margin-bottom-large" v-html="section.title"></div>
     <div class="columns is-multiline">
       <div class="column is-4 big-numbers" v-for="(item, index) in section.elements" v-bind:key="index" :class="elementClass(index, section.elements.length)">
-        <figure class="image doctor-profile-numbers" v-if="item.value === '1'">
-          <img src="@/assets/home/doctor-profile-generic.svg" alt="Doctor">
+        <div v-if="item.value !== '1'">{{item.value}}</div>
+        <figure class="image doctor-profile-numbers" v-else>
+          <img src="@/assets/home/doctor-profile-generic.svg" alt="Een dokter" v-if="item.icon === 'woman'">
+          <img src="@/assets/home/doctor-profile-generic-man.svg" alt="Een dokter" v-if="item.icon === 'man'">
         </figure>
-        <div v-else>{{item.value}}</div>
         <div v-html="item.label"></div>
       </div>
     </div>
