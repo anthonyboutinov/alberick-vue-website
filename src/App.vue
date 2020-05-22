@@ -46,7 +46,7 @@
       <p>
         ©
         <router-link to="/" class="link-hidden">Medisch Centrum Alberick</router-link> 2020.
-        <router-link to="/privacy-policy">Privacy</router-link>.
+        <router-link to="/privacy">Privacy</router-link>.
         <router-link to="/terms">Terms</router-link>. Website by
         <a href="https://boutinov.website" target="_blank">Boutinov</a>. Artwork design by
         <a href="https://freepik.com" target="_blank" class="link-hidden">pch.vector / Freepik</a>.

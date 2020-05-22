@@ -3,12 +3,12 @@
   <div class="hero-body menu-hero-body">
     <div class="container">
       <div class="columns is-multiline is-mobile is-variable is-1 is-hidden-tablet">
-        <div class="column" v-for="item in menuItems" v-bind:key="item.slug" :class="{'is-12': item.slug === 'spoed', 'is-6': item.slug !== 'spoed'}">
+        <div class="column" v-for="item in menuItems" v-bind:key="item.slug" :class="{'is-12': item.slug === 'spoed__', 'is-6': item.slug !== 'spoed__'}">
           <menu-item :slug="item.slug" :title="item.title" :ispartofprimarymenu="true" />
         </div>
       </div>
       <div class="columns is-multiline is-variable is-2 is-hidden-mobile">
-        <div class="column" v-for="item in menuItems" v-bind:key="item.slug" :class="{'is-8': item.slug === 'spoed', 'is-4': item.slug !== 'spoed', 'is-hidden-tablet': item.mobileOnly}">
+        <div class="column" v-for="item in menuItems" v-bind:key="item.slug" :class="{'is-8': item.slug === 'spoed__', 'is-4': item.slug !== 'spoed__', 'is-hidden-tablet': item.mobileOnly}">
           <menu-item :slug="item.slug" :title="item.title" :ispartofprimarymenu="true" />
         </div>
       </div>
@@ -72,6 +72,9 @@ export default {
       }, {
         slug: 'klachtenregeling',
         title: 'Klachtenregeling',
+      }, {
+        slug: 'privacy',
+        title: 'Privacyreglement',
       }]
     }
   }

@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     _nobackground() {
-      return Object.prototype.hasOwnProperty.call(this, 'nobackground') ? this.nobackground : this.slug === 'spoed' || this.slug === 'herhaal-recepten'
+      return Object.prototype.hasOwnProperty.call(this, 'nobackground') ? this.nobackground : this.slug === 'spoed__' || this.slug === 'herhaal-recepten' || this.slug === 'privacy'
     },
     _slug() {
       if (this.slug.substr(-1) === "/") {
@@ -41,8 +41,8 @@ export default {
     },
     _class() {
       return {
-        'is-4by3-tablet': !(this.ispartofprimarymenu && this._slug === 'spoed'),
-        'is-8gap2by3-tablet': this.ispartofprimarymenu && this._slug === 'spoed',
+        'is-4by3-tablet': !(this.ispartofprimarymenu && this._slug === 'spoed__'),
+        'is-8gap2by3-tablet': this.ispartofprimarymenu && this._slug === 'spoed__',
         'has-border-radius': this.hasradius,
         ispartofprimarymenu: this.ispartofprimarymenu
       }
@@ -62,9 +62,6 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-    // transition: box-shadow 0.2s ease-out;
-    // box-shadow: 0 0 0.3rem rgba($primary, 0);
-    // transform: translateY(0rem);
 
     @media (max-width: $tablet - 1px) {
         border-radius: 3px;
@@ -108,8 +105,6 @@ export default {
     &:active,
     &:focus,
     &:hover {
-        // box-shadow: 0 0 0.3rem rgba($primary, 0.5);
-        // transform: translateY(-0.15rem);
         .menu-item-body {
             color: $link;
         }
@@ -132,35 +127,16 @@ export default {
 }
 
 @media (min-width: $tablet) {
-    // @each $slug in 'afspraak-maken',
-    // 'afwezigheid-huisartsen',
-    // 'herhaal-recepten',
-    // 'huisbezoek',
-    // 'inschrijving',
-    // 'klachtenregeling',
-    // 'lab',
-    // 'links',
-    // 'online-services',
-    // 'praktijkinfo',
-    // 'speciale-onderzoeken',
-    // 'spoed',
-    // 'spreekuren',
-    // 'team' {
-    //     [data-menu-item="#{$slug}"] {
-    //         background-image: url("/menu-items/mi-#{$slug}.svg");
-    //     }
-    // }
-
     [data-menu-item="spoed"].ispartofprimarymenu {
         border-top-left-radius: 12px;
     }
-    [data-menu-item="team"].ispartofprimarymenu {
+    [data-menu-item="spreekuren"].ispartofprimarymenu {
         border-top-right-radius: 12px;
     }
-    [data-menu-item="links"].ispartofprimarymenu {
+    [data-menu-item="afwezigheid-huisartsen"].ispartofprimarymenu {
         border-bottom-left-radius: 12px;
     }
-    [data-menu-item="klachtenregeling"].ispartofprimarymenu {
+    [data-menu-item="privacy"].ispartofprimarymenu {
         border-bottom-right-radius: 12px;
     }
 }

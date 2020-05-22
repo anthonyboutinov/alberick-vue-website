@@ -43,7 +43,7 @@ const routes = [{
   // Redirect mismatching old website's routes to the updated ones
   {
     path: '/privacyreglement',
-    redirect: '/privacy-policy'
+    redirect: '/privacy'
   },
   {
     path: '/speciale_onderzoeken',

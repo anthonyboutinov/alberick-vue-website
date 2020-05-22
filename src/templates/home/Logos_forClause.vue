@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    logos: Object
+    logos: Array
   },
 }
 </script>
