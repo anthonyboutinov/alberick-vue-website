@@ -133,7 +133,7 @@ $navbar-logo-negative-margin: 0.20652173913;
   }
 }
 
-@media (max-width: $tablet - 1px) {
+@media (max-width: ($tablet - 1px)) {
     .navbar-brand > .navbar-item {
         padding-left: 1.5rem;
     }
