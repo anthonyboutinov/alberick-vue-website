@@ -107,13 +107,29 @@ export default {
           slug: "moet-ik-naar-de-dokter",
           title: "Moet ik naar de huisarts?",
         },
+        {
+          slug: "patientenportaal",
+          title: "Patiëntenportaal",
+        },
         // {
         //   slug: "afwezigheid-huisartsen",
         //   title: "Afwezigheid huisartsen",
         // },
         {
+          slug: "patienttevredenheidsonderzoek",
+          title: "Patiënt­tevreden­heids­onderzoek",
+        },
+        {
           slug: "klachtenregeling",
           title: "Klachtenregeling",
+        },
+        {
+          slug: "compliment-geven",
+          title: "Compliment geven",
+        },
+        {
+          slug: "links",
+          title: "Interessante links",
         },
         {
           slug: "privacy",
